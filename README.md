@@ -188,20 +188,20 @@ You can go from source to running container with three quick commands.
 
 2. **Build the image from the Dockerfile**
    ```bash
-   docker build -t flask-shorty:latest .
+   docker build -t url-shortner:latest .
    ```
 
 3. **Run the container (detached)**
    ```bash
-   docker run -d --name flask-shorty -p 8000:8000 --env-file .env flask-shorty:latest
+   docker run -d --name url-shortner -p 8000:8000 --env-file .env url-shortner:latest
    ```
 
 4. **Stop the container when you’re done**
    ```bash
-   docker stop flask-shorty
+   docker stop url-shortner
    ```
 
-The app is now available at `http://localhost:8000`. To view logs run `docker logs -f flask-shorty`. Remove the stopped container with `docker rm flask-shorty` if desired. To rebuild after code changes, rerun step 2 then step 3.
+The app is now available at `http://localhost:8000`. To view logs run `docker logs -f url-shortner`. Remove the stopped container with `docker rm url-shortner` if desired. To rebuild after code changes, rerun step 2 then step 3.
 
 ## Running Tests
 
