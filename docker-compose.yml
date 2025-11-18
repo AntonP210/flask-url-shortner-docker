@@ -1,7 +1,7 @@
 services:
   web:
     build: .
-    image: antonpas210/url-shortner:latest
+    image: antonpas210/url-shortner:v1
     ports:
       - "8000:8000"
     env_file:
