@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: url-shortner-config
+data:
+  DB_PATH: "/data/shorty.db"
+  CODE_LENGTH: "6"
+  # For local dev via port-forward use localhost; with NodePort/Ingress update accordingly
+  BASE_URL: "http://localhost:8000"
