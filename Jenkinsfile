@@ -2,7 +2,7 @@ pipeline {
     agent any 
 
     environment {
-        DOCKER_USER = 'antonp210'
+        DOCKER_USER = 'antonpas210'
         IMAGE_NAME = 'url-shortener'
         REGISTRY_CREDENTIALS_ID = 'docker-hub-credentials' 
     }
