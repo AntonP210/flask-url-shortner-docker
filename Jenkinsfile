@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_USER = 'antonp210'
-        IMAGE_NAME = 'flask-url-shortener'
+        IMAGE_NAME = 'url-shortener'
         REGISTRY_CREDENTIALS_ID = 'docker-hub-credentials' 
     }
 
