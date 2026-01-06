@@ -20,7 +20,7 @@ pipeline {
                 echo 'Linting Helm Chart...'
                 sh "helm lint ./flask-app-chart"
                 echo 'Testing Docker Image...'
-                sh "docker run --rm ${DOCKER_USER}/${IMAGE_NAME}:${env.BUILD_ID} python -m flask --version"
+                sh "docker run --rm ${DOCKER_USER}/${IMAGE_NAME}:latest python -m flask --version"
             }
         }
 
@@ -29,7 +29,7 @@ pipeline {
                 echo 'Pushing to Docker Hub...'
                 withCredentials([usernamePassword(credentialsId: "${REGISTRY_CREDENTIALS_ID}", passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                     sh "echo $PASS | docker login -u $USER --password-stdin"
-                    sh "docker push ${DOCKER_USER}/${IMAGE_NAME}:${env.BUILD_ID}"
+                    sh "docker push ${DOCKER_USER}/${IMAGE_NAME}:latest"
                 }
 
                 echo 'Deploying to Kubernetes via Helm...'
