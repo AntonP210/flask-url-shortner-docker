@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Docker Image...'
-                sh "docker build -t ${DOCKER_USER}/${IMAGE_NAME}:${env.BUILD_ID} ."
+                sh "docker build -t ${DOCKER_USER}/${IMAGE_NAME}:latest ."
             }
         }
 
