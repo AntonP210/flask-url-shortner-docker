@@ -33,7 +33,7 @@ pipeline {
                 }
 
                 echo 'Deploying to Kubernetes via Helm...'
-                sh "helm upgrade --install flask-app ./flask-app-chart --set image.tag=${env.BUILD_ID}"
+                sh "helm upgrade --install flask-app ./flask-app-chart --set image.tag=latest"
             }
         }
     }
